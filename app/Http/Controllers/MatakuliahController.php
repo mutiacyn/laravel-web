@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -35,7 +34,7 @@ class MatakuliahController extends Controller
      */
     public function show(string $kode = null)
     {
-        if($kode == 'ST445'){
+        if ($kode == 'ST445') {
             return view('halaman-Matakuliah-ST445');
         } else {
             return view('halaman-Matakuliah-tanpaKode');
