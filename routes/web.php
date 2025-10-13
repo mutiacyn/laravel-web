@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MatakuliahController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,3 +46,5 @@ Route::post('auth/login', [AuthController::class, 'store'])
         ->name('auth.login');
 
 Route::get('/auth', [AuthController::class, 'index']);
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
