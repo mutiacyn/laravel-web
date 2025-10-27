@@ -8,6 +8,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PelangganController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,3 +49,5 @@ Route::post('auth/login', [AuthController::class, 'store'])
 Route::get('/auth', [AuthController::class, 'index']);
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::resource('pelanggan', PelangganController::class);
