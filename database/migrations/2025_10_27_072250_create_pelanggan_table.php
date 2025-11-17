@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    
+
 
     /**
      * Reverse the migrations.
@@ -18,6 +18,7 @@ return new class extends Migration
     {
         Schema::dropIfExists('pelanggan');
     }
+    
     public function up()
 {
     Schema::create('pelanggan', function (Blueprint $table) {
