@@ -12,9 +12,14 @@ class PelangganController extends Controller
 
 
 
-    public function index()
+    public function index(Request $request)
     {
-        $data['dataPelanggan'] = Pelanggan::paginate(10);
+        $filterableColumns = ['gender'];
+        $searchableColumns = ['first_name','last_name','email'];
+        $data['dataPelanggan'] = Pelanggan::filter($request, $filterableColumns)
+        ->search($request, $searchableColumns)
+        ->simplePaginate(10);
+
         // dd($data['dataPelanggan']);
 		return view('admin.pelanggan.index',$data);
     }
@@ -93,4 +98,6 @@ class PelangganController extends Controller
         $pelanggan->delete();
         return redirect()->route('pelanggan.index')->with('success', 'Data berhasil dihapus');
     }
+
+
 }
