@@ -14,7 +14,7 @@ class PelangganController extends Controller
 
     public function index()
     {
-        $data['dataPelanggan'] = Pelanggan::all();
+        $data['dataPelanggan'] = Pelanggan::pagination(10)->onEachSide(2) ;
         // dd($data['dataPelanggan']);
 		return view('admin.pelanggan.index',$data);
     }
@@ -67,7 +67,7 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
     $pelanggan_id = $id;
     $pelanggan = Pelanggan::findOrFail($pelanggan_id);
 
