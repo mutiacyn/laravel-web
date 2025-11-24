@@ -19,7 +19,7 @@ class PelangganController extends Controller
 
         $data['dataPelanggan'] = Pelanggan::filter($request, $filterableColumns)
         ->search($request, $searchableColumns)
-        ->paginate(10)
+        ->paginate(10)->onEachSide(2) 
         ->withQueryString();
 
         // dd($data['dataPelanggan']);
