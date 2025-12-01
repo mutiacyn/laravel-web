@@ -54,7 +54,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $item)
+                            @foreach ($dataUser as $item)
                                 <tr>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
@@ -91,7 +91,7 @@
                                 </tr>
                             @endforeach
 
-                            @if ($users->isEmpty())
+                            @if ($dataUser->isEmpty())
                                 <tr>
                                     <td colspan="3" class="text-center text-muted">Belum ada data user.</td>
                                 </tr>
